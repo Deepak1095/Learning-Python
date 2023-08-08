@@ -1,0 +1,23 @@
+{
+    "1": {
+        "id": 1,
+        "snack": "Chips",
+        "price": 15,
+        "stocks": 9,
+        "availability": true
+    },
+    "2": {
+        "id": 2,
+        "snack": "Chocolate",
+        "price": 20,
+        "stocks": 10,
+        "availability": true
+    },
+    "3": {
+        "id": 3,
+        "snack": "Sandwich",
+        "price": 50,
+        "stocks": 0,
+        "availability": false
+    }
+}
