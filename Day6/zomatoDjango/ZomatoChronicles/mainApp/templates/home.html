@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Chronicles - Home</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Zomato Chronicles</h1>
+    </header>
+    <main>
+        <p>Experience the culinary delights of Zesty Zomato!</p>
+        <h2>Our Menu</h2>
+        <ul>
+            {% for item in menu_items %}
+                {% if item.availability %}
+                    <li>
+                        <strong>{{ item.name }}</strong><br>
+                        Price: ${{ item.price }}
+                        <form method="post" action="{% url 'add_to_cart' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="item_id" value="{{ item.id }}">
+                            <button type="submit">Add to Cart</button>
+                        </form>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <a href="{% url 'cart' %}">View Cart</a>
+    </main>
+    
+    
+</body>
+</html>
